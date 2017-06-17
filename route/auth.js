@@ -1,11 +1,9 @@
 'use strict';
 
-const auth = require('express')();
-
-require('../config')(auth);
+const auth = require('../library/router')();
 
 auth.post('/', (request, response) => {
-	response.send({auth: 'OK'});
+	response.send({auth: {status: 'OK'}});
 });
 
 module.exports = auth;
